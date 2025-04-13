@@ -1,0 +1,370 @@
+/* =================================================
+   Siemens Theme for Keycloak v3 Account Console
+   ================================================= */
+
+/* ===== 1. Global Variables ===== */
+:root {
+  /* Siemens Brand Colors */
+  --siemens-deep-blue: #000028;      /* Previous header/sidebar color, now main background */
+  --siemens-dark-gray: #23233c;      /* New header/sidebar color */
+  --siemens-teal: #00cccc;           /* Primary interactive color */
+  --siemens-bright-green: #00ffb9;   /* Hover accent color */
+  --siemens-white: #ffffff;          /* For text and highlights */
+
+  /* Override PatternFly v5 Variables */
+  --pf-v5-global--primary-color--100: var(--siemens-teal) !important;
+  --pf-v5-global--primary-color--200: var(--siemens-bright-green) !important;
+  --pf-v5-global--active-color--100: var(--siemens-teal) !important;
+  --pf-v5-global--link--Color: var(--siemens-teal) !important;
+  --pf-v5-global--link--Color--hover: var(--siemens-bright-green) !important;
+
+  /* Background Colors */
+  --pf-v5-global--BackgroundColor--100: var(--siemens-deep-blue) !important;  /* Main background */
+  --pf-v5-global--BackgroundColor--200: var(--siemens-deep-blue) !important;  /* Main content background */
+  --pf-v5-global--BackgroundColor--dark-100: var(--siemens-dark-gray) !important; /* Header and Navbar */
+  --pf-v5-global--BackgroundColor--dark-200: var(--siemens-dark-gray) !important;
+
+  /* Text Colors */
+  --pf-v5-global--Color--100: var(--siemens-white) !important; /* Main text color */
+  --pf-v5-global--Color--light-100: var(--siemens-white) !important; /* Text on dark background */
+
+  /* Component Variables */
+  --pf-v5-c-page__header--BackgroundColor: var(--siemens-dark-gray) !important;
+  --pf-v5-c-page__sidebar--BackgroundColor: var(--siemens-dark-gray) !important;
+  --pf-v5-c-page--BackgroundColor: var(--siemens-deep-blue) !important;
+  --pf-v5-c-page__main--BackgroundColor: var(--siemens-deep-blue) !important;
+}
+
+/* ===== 2. Body & Global Styles ===== */
+body {
+  background-color: var(--siemens-deep-blue) !important;
+  color: var(--pf-v5-global--Color--100) !important;
+  font-family: 'Arial', sans-serif !important;
+}
+
+/* ===== 3. Header and Navigation ===== */
+/* Header styling */
+.pf-v5-c-page__header,
+.pf-c-page__header {
+  background-color: var(--siemens-dark-gray) !important;
+  border-bottom: 4px solid var(--siemens-teal) !important;
+  min-height: 76px !important;
+  padding: 0 20px !important;
+}
+
+/* Hide original logo */
+.pf-v5-c-brand,
+.pf-c-brand {
+  display: none !important;
+}
+
+/* Add Siemens branding text */
+.pf-v5-c-page__header-brand::before,
+.pf-c-page__header-brand::before {
+  content: "SIEMENS" !important;
+  color: var(--siemens-white) !important;
+  font-weight: bold !important;
+  font-size: 20px !important;
+  letter-spacing: 1px !important;
+  margin-right: 24px !important;
+  display: inline-block !important;
+  align-self: center !important;
+}
+
+.pf-v5-c-page__header-brand,
+.pf-c-page__header-brand {
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Sidebar styling */
+.pf-v5-c-page__sidebar,
+.pf-c-page__sidebar {
+  background-color: var(--siemens-dark-gray) !important;
+  color: var(--siemens-white) !important;
+}
+
+/* Navigation links */
+.pf-v5-c-nav__item .pf-v5-c-nav__link,
+.pf-c-nav__item .pf-c-nav__link {
+  color: var(--siemens-white) !important;
+  font-weight: 500 !important;
+  padding: 16px 20px !important;
+  border-left: 4px solid transparent !important;
+}
+
+.pf-v5-c-nav__item .pf-v5-c-nav__link:hover,
+.pf-c-nav__item .pf-c-nav__link:hover {
+  background-color: rgba(0, 204, 204, 0.12) !important;
+  color: var(--siemens-bright-green) !important;
+  border-left-color: var(--siemens-bright-green) !important;
+}
+
+.pf-v5-c-nav__item.pf-m-current .pf-v5-c-nav__link,
+.pf-c-nav__item.pf-m-current .pf-c-nav__link {
+  color: var(--siemens-teal) !important;
+  background-color: rgba(0, 204, 204, 0.12) !important;
+  border-left-color: var(--siemens-bright-green) !important;
+  font-weight: 600 !important;
+}
+
+/* ===== 4. Main Content Area ===== */
+.pf-v5-c-page__main,
+.pf-c-page__main {
+  background-color: var(--siemens-deep-blue) !important;
+  color: var(--pf-v5-global--Color--100) !important;
+}
+
+.pf-v5-c-page__main-section,
+.pf-c-page__main-section {
+  background-color: var(--siemens-deep-blue) !important;
+  padding: 24px 32px !important;
+  color: var(--siemens-white) !important;
+}
+
+.pf-v5-c-page__main-section.pf-m-light,
+.pf-c-page__main-section.pf-m-light {
+  background-color: var(--siemens-deep-blue) !important;
+}
+
+/* ===== 5. Buttons and Interactive Elements ===== */
+/* Primary Buttons */
+.pf-v5-c-button.pf-m-primary,
+.pf-c-button.pf-m-primary {
+  background-color: var(--siemens-teal) !important;
+  color: black !important;
+  font-weight: 500 !important;
+  border: none !important;
+  border-radius: 2px !important;
+}
+
+.pf-v5-c-button.pf-m-primary:hover,
+.pf-c-button.pf-m-primary:hover {
+  background-color: var(--siemens-bright-green) !important;
+}
+
+/* Secondary Buttons */
+.pf-v5-c-button.pf-m-secondary,
+.pf-c-button.pf-m-secondary {
+  border: 1px solid var(--siemens-teal) !important;
+  color: var(--siemens-teal) !important;
+  background-color: transparent !important;
+  border-radius: 2px !important;
+}
+
+.pf-v5-c-button.pf-m-secondary:hover,
+.pf-c-button.pf-m-secondary:hover {
+  background-color: rgba(0, 204, 204, 0.12) !important;
+  color: var(--siemens-bright-green) !important;
+  border-color: var(--siemens-bright-green) !important;
+}
+
+/* Links */
+a {
+  color: var(--siemens-teal) !important;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: var(--siemens-bright-green) !important;
+}
+
+/* Links in header and sidebar */
+.pf-v5-c-page__header a,
+.pf-v5-c-page__sidebar a,
+.pf-c-page__header a,
+.pf-c-page__sidebar a {
+  color: var(--siemens-teal) !important;
+}
+
+.pf-v5-c-page__header a:hover,
+.pf-v5-c-page__sidebar a:hover,
+.pf-c-page__header a:hover,
+.pf-c-page__sidebar a:hover {
+  color: var(--siemens-bright-green) !important;
+}
+
+/* ===== 6. Forms ===== */
+/* Form labels */
+.pf-v5-c-form__label,
+.pf-c-form__label {
+  color: var(--siemens-white) !important;
+  font-weight: 500 !important;
+}
+
+/* Form controls */
+.pf-v5-c-form-control,
+.pf-c-form-control {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border: none !important;
+  border-radius: 2px !important;
+  color: var(--siemens-white) !important;
+  padding: 10px 12px !important;
+}
+
+.pf-v5-c-form-control:focus,
+.pf-c-form-control:focus {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 0 0 2px rgba(0, 204, 204, 0.4) !important;
+}
+
+.pf-v5-c-form-control::placeholder,
+.pf-c-form-control::placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+
+/* ===== 7. Cards ===== */
+.pf-v5-c-card,
+.pf-c-card {
+  border-top: 4px solid var(--siemens-teal) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+  margin-bottom: 24px !important;
+  background-color: var(--siemens-dark-gray) !important;
+  color: var(--siemens-white) !important;
+}
+
+.pf-v5-c-card__title,
+.pf-c-card__title {
+  color: var(--siemens-white) !important;
+  font-weight: 600 !important;
+  font-size: 18px !important;
+}
+
+.pf-v5-c-card__header,
+.pf-c-card__header {
+  padding: 16px 20px !important;
+}
+
+.pf-v5-c-card__body,
+.pf-c-card__body {
+  color: var(--siemens-white) !important;
+}
+
+.pf-v5-c-card__footer,
+.pf-c-card__footer {
+  padding: 16px 20px !important;
+}
+
+/* ===== 8. Footer ===== */
+.pf-v5-c-page__main-section:last-child::after,
+.pf-c-page__main-section:last-child::after {
+  content: "© Siemens AG" !important;
+  display: block !important;
+  text-align: center !important;
+  margin-top: 30px !important;
+  font-size: 12px !important;
+  color: var(--siemens-white) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+  padding-top: 20px !important;
+}
+
+/* ===== 9. Other Components ===== */
+/* Table Headers */
+.pf-v5-c-table thead th,
+.pf-c-table thead th {
+  background-color: var(--siemens-dark-gray) !important;
+  color: var(--siemens-white) !important;
+}
+
+.pf-v5-c-table tbody tr:nth-child(even),
+.pf-c-table tbody tr:nth-child(even) {
+  background-color: var(--siemens-deep-blue) !important;
+}
+
+/* Alerts */
+.pf-v5-c-alert.pf-m-success,
+.pf-c-alert.pf-m-success {
+  background-color: rgba(0, 204, 204, 0.1) !important;
+  border-left: 4px solid var(--siemens-teal) !important;
+}
+
+.pf-v5-c-alert__title,
+.pf-c-alert__title {
+  color: var(--siemens-white) !important;
+}
+
+/* Tooltip */
+.pf-v5-c-tooltip,
+.pf-c-tooltip {
+  --pf-v5-c-tooltip--BackgroundColor: var(--siemens-dark-gray) !important;
+}
+
+/* Pagination */
+.pf-v5-c-pagination__nav,
+.pf-c-pagination__nav {
+  color: var(--siemens-white) !important;
+}
+
+.pf-v5-c-pagination__nav .pf-v5-c-button,
+.pf-c-pagination__nav .pf-c-button {
+  color: var(--siemens-white) !important;
+}
+
+/* Tabs */
+.pf-v5-c-tabs__link,
+.pf-c-tabs__link {
+  color: var(--siemens-white) !important;
+}
+
+.pf-v5-c-tabs__item.pf-m-current .pf-v5-c-tabs__link,
+.pf-c-tabs__item.pf-m-current .pf-c-tabs__link {
+  color: var(--siemens-teal) !important;
+}
+
+.pf-v5-c-tabs__item.pf-m-current .pf-v5-c-tabs__link::after,
+.pf-c-tabs__item.pf-m-current .pf-c-tabs__link::after {
+  background-color: var(--siemens-bright-green) !important;
+}
+
+/* ===== 10. Scrollbars ===== */
+*:not(html,body)::-webkit-scrollbar {
+  width: 8px !important;
+  height: 8px !important;
+}
+
+*:not(html,body)::-webkit-scrollbar-thumb {
+  background-color: var(--siemens-dark-gray) !important;
+}
+
+*:not(html,body)::-webkit-scrollbar-track {
+  background-color: var(--siemens-deep-blue) !important;
+}
+
+/* ===== 11. Override Dark Mode if Needed ===== */
+:root {
+  color-scheme: dark !important;
+}
+
+div#cred-41712262-fc60-4a02-b5c1-ce9768c159dd {
+  background-color: var(--siemens-dark-gray) !important;
+}
+
+div#cred-a4b1b7bb-8878-4422-a641-dbe71891df56 {
+  background-color: var(--siemens-dark-gray) !important;
+}
+.pf-v5-c-data-list__item-row {
+  background-color: var(--siemens-dark-gray) !important;
+  color: var(--siemens-white) !important;
+  border-radius: 4px !important;
+  padding: 16px !important;
+}
+
+.pf-v5-c-form-control > :is(input, select, textarea) {
+  color: var(--siemens-white) !important;
+  appearance: none;
+  background-color: rgba(0, 0, 0, 0);
+  padding-block-start: var(--pf-v5-c-form-control--PaddingTop);
+  padding-block-end: var(--pf-v5-c-form-control--PaddingBottom);
+  padding-inline-start: var(--pf-v5-c-form-control--PaddingLeft);
+  padding-inline-end: var(--pf-v5-c-form-control--PaddingRight);
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+  grid-area: 1 / 1 / 2 / -1;
+}
+
+
+

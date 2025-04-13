@@ -15,22 +15,26 @@
     </#if>
 </head>
 <body>
+    <a href="#content" class="skip-link">Skip to content</a>
+    
     <div class="login-container">
         <div class="left-panel">
             <div class="logo">SIEMENS</div>
             
-            <div class="content">
-                <h1><#nested "header"></h1>
-                
-                <#if displayMessage && message?has_content && (message.type != 'warning' || !isAppInitiatedAction??)>
-                    <div class="alert alert-${message.type}">
-                        <span class="message-text">${kcSanitize(message.summary)?no_esc}</span>
-                    </div>
-                </#if>
-                
-                <div class="accent-line"></div>
-                
-                <#nested "form">
+            <div class="content-wrapper">
+                <div id="content" class="content">
+                    <h1><#nested "header"></h1>
+                    
+                    <#if displayMessage && message?has_content && (message.type != 'warning' || !isAppInitiatedAction??)>
+                        <div class="alert alert-${message.type}">
+                            <span class="message-text">${kcSanitize(message.summary)?no_esc}</span>
+                        </div>
+                    </#if>
+                    
+                    <div class="accent-line"></div>
+                    
+                    <#nested "form">
+                </div>
             </div>
             
             <div class="footer">

@@ -3,7 +3,7 @@
     <#if section = "header">
         ${msg("updatePasswordTitle")}
     <#elseif section = "form">
-        <p>${msg("updatePasswordInstruction")}</p>
+        <p>${msg("Please Update your Password")}</p>
         
         <form id="kc-passwd-update-form" action="${url.loginAction}" method="post">
             <input type="text" id="username" name="username" value="${username}" autocomplete="username" readonly="readonly" style="display:none;"/>
