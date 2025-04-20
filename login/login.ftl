@@ -2,11 +2,15 @@
 <@layout.registrationLayout; section>
     <#if section = "header">
         Siveillance Access
+
     <#elseif section = "form">
         <div class="auth-intro">
-            <p>Protected by Keycloak</p>
+            <p>${msg("protectedByKeycloak")}</p>
         </div>
-        
+
+
+
+       
         <div id="kc-form" class="form-wrapper">
             <form id="kc-form-login" onsubmit="login.disabled = true; return true;" action="${url.loginAction}" method="post">
                 <div class="form-group">
@@ -59,6 +63,26 @@
                     </div>
                 </#if>
             </form>
+
+            <#if realm.password && social.providers??>
+
+            <#if social.providers?size gt 0>
+                <div class="separator">
+                    <span class="separator-text">OR</span>
+                </div>
+            </#if>
+
+            <div id="kc-social-providers" class="social-providers">
+                <#list social.providers as p>
+                    <a href="${p.loginUrl}" id="zocial-${p.alias}" class="social-link ${p.providerId}">
+                        ${msg("doLogIn")} with ${p.displayName}
+                    </a>
+                </#list>
+            </div>
+        </#if>
+        
         </div>
+
+         
     </#if>
 </@layout.registrationLayout>

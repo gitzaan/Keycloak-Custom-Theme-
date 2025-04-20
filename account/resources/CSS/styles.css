@@ -33,6 +33,19 @@
   --pf-v5-c-page__sidebar--BackgroundColor: var(--siemens-dark-gray) !important;
   --pf-v5-c-page--BackgroundColor: var(--siemens-deep-blue) !important;
   --pf-v5-c-page__main--BackgroundColor: var(--siemens-deep-blue) !important;
+
+  /* MastHead */
+
+
+  .pf-v5-c-masthead .pf-v5-c-toolbar {
+    --pf-v5-c-toolbar--BackgroundColor: var(--siemens-dark-gray) !important;
+    --pf-v5-c-masthead--BackgroundColor: var(--siemens-dark-gray) !important;
+}   
+
+  .pf-v5-c-masthead {
+    --pf-v5-c-masthead--BackgroundColor: var(--siemens-dark-gray) !important;}
+  
+  
 }
 
 /* ===== 2. Body & Global Styles ===== */
@@ -366,5 +379,48 @@ div#cred-a4b1b7bb-8878-4422-a641-dbe71891df56 {
   grid-area: 1 / 1 / 2 / -1;
 }
 
+.pf-v5-c-menu__list{
+  background-color: var(--siemens-dark-gray)
+}
+pf-v5-c-menu__item-text{
+  color: var(--siemens-white) !important;
+  font-weight: 500 !important;
+  padding: 16px 20px !important;
+  border-left: 4px solid transparent !important;
+}
+.pf-v5-c-menu{
+  color: var(--siemens-white) !important;
+}
 
 
+.pf-v5-c-data-list__item {
+  background-color: var(--siemens-dark-gray) !important;
+  border-block-end: var(--pf-v5-c-data-list__item--BorderBottomWidth) solid var(--pf-v5-c-data-list__item--BorderBottomColor);
+  flex-direction: column;
+  display: flex
+;
+  position: relative;
+}
+button.pf-v5-c-menu-toggle {
+  background-color: var(--siemens-deep-blue);
+}
+.pf-v5-c-nav__link.pf-m-current, .pf-v5-c-nav__link.pf-m-current:hover, .pf-v5-c-nav__item.pf-m-current:not(.pf-m-expanded) .pf-v5-c-nav__link {
+  color: var(--pf-v5-c-nav__link--m-current--Color);
+  background-color: var(--siemens-dark-gray)
+  
+}
+
+button.pf-v5-c-button.pf-m-control{
+  background-color: var(--siemens-dark-gray) !important;
+  color: var(--siemens-white) !important;
+  
+  
+}
+
+input.pf-v5-c-text-input-group__text-input{
+  background-color: var(--siemens-dark-gray) !important;
+  color: var(--siemens-white) !important;
+  border: none !important;
+  border-radius: 3px !important;
+  padding: 10px 12px !important;
+}

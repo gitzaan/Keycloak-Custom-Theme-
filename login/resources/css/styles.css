@@ -183,6 +183,12 @@ p {
     opacity: 0.7;
 }
 
+.input-icon svg {
+    width: 16px;
+    height: 16px;
+    opacity: 0.7;
+}
+
 .user-icon {
     background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>') no-repeat center center;
     background-size: contain;
@@ -308,6 +314,7 @@ p {
 
 
 .login-btn {
+    flex: 2;
     background-color: #17d4d4;
     border: none;
     padding: 12px;  
@@ -331,6 +338,27 @@ p {
 }
 
 .btn-cancel {
+    background-color: transparent;
+    border: 1px solid #17d4d4;
+    color: #17d4d4;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 2px;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-cancel {
+    flex: 1;
     background-color: transparent;
     border: 1px solid #17d4d4;
     color: #17d4d4;
@@ -856,6 +884,59 @@ p {
     animation: spin 1s linear infinite;
 }
 
+#kc-update-profile-form {
+    max-width: 600px;
+    width: 100%;
+}
+
+#kc-update-profile-form .form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    #kc-update-profile-form .form-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+#kc-update-profile-form .form-group {
+    flex: 1;
+    margin-bottom: 15px;
+}
+
+#kc-update-profile-form .input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#kc-update-profile-form .form-control {
+    width: 100%;
+    padding: 10px 10px 10px 32px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    border-radius: 2px;
+}
+
+#kc-update-profile-form .form-control:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#kc-update-profile-form .form-control.error {
+    border: 1px solid #ff5555;
+}
+
+#kc-update-profile-form .error-message {
+    color: #ff5555;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
 @keyframes spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
@@ -942,6 +1023,74 @@ p {
     background-color: rgba(12, 12, 36, 0.7);
     padding: 5px 10px;
     border-radius: 4px;
+}
+
+.social-providers {
+    margin-bottom: 20px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    border-radius: 2px;
+    font-size: 16px;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.social-link.google {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.provider-icon {
+    width: 18px;
+    height: 18px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0) invert(1);
+}
+
+.google-icon {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="%23ffffff" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="%23ffffff" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="%23ffffff" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="%23ffffff" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>');
+}
+
+.provider-text {
+    font-family: 'Arial', sans-serif;
+    font-weight: 500;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.separator-text {
+    padding: 0 10px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
 }
 
 
